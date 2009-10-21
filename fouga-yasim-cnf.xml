@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList include="fouga-base.xml">
+
+ <sim>
+
+  <description>Fouga Magister (YASim)</description>
+  <flight-model>yasim</flight-model>
+  <aero>fouga-yasim</aero>
+
+ </sim>
+
+</PropertyList>
+
