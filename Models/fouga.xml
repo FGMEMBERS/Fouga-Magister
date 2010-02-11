@@ -152,7 +152,7 @@
     </offsets>
   </model>
 
-  <!-- Une ombre pour OSG 
+  <!-- Une ombre pour OSG -->
   <model>
     <name>shadowOSG</name>
     <path>Aircraft/Fouga-Magister/Models/shadow.xml</path>
@@ -167,7 +167,7 @@
         <value>true</value>
       </equals>
     </condition>
-  </animation> -->
+  </animation>
 
   <!-- Particules OSG -->
   <model>
@@ -198,8 +198,8 @@
   <animation>
     <type>rotate</type>
     <object-name>profdirG</object-name>
-    <property>/controls/flight/rudder</property>
-    <factor> 15 </factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> -15 </factor>
     <axis>
       <x1-m>  4.173 </x1-m>
       <y1-m> -0.372 </y1-m>
@@ -213,8 +213,8 @@
   <animation>
     <type>rotate</type>
     <object-name>profdirD</object-name>
-    <property>/controls/flight/rudder</property>
-    <factor> 15 </factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> -15 </factor>
     <axis>
       <x1-m> 4.173 </x1-m>
       <y1-m> 0.372 </y1-m>
@@ -228,7 +228,7 @@
   <animation>
     <type>rotate</type>
     <object-name>profdirG</object-name>
-    <property>/controls/flight/elevator</property>
+    <property>surface-positions/elevator-pos-norm</property>
     <factor> 15 </factor>
     <axis>
       <x1-m>  4.483 </x1-m>
@@ -243,7 +243,7 @@
   <animation>
     <type>rotate</type>
     <object-name>profdirD</object-name>
-    <property>/controls/flight/elevator</property>
+    <property>surface-positions/elevator-pos-norm</property>
     <factor> 15 </factor>
     <axis>
       <x1-m> 4.173 </x1-m>
@@ -259,8 +259,8 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
-    <property>/surface-positions/left-aileron-pos-norm</property>
-    <factor>20</factor>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor> 20 </factor>
     <axis>
       <x1-m>  0.849 </x1-m>
       <y1-m> -5.632 </y1-m>
@@ -274,8 +274,8 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronD</object-name>
-    <property>/surface-positions/right-aileron-pos-norm</property>
-    <factor>20</factor>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <factor> 20 </factor>
     <axis>
       <x1-m>  0.731 </x1-m>
       <y1-m>  3.490 </y1-m>
@@ -290,8 +290,8 @@
   <animation>
     <type>rotate</type>
     <object-name>voletG1</object-name>
-    <property>/surface-positions/flap-pos-norm</property>
-    <factor>-40.0</factor>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor> 40 </factor>
     <axis>
       <x1-m>  0.724 </x1-m>
       <y1-m> -2.120 </y1-m>
@@ -305,8 +305,8 @@
   <animation>
     <type>rotate</type>
     <object-name>voletG2</object-name>
-    <property>/surface-positions/flap-pos-norm</property>
-    <factor>-40.0</factor>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor> 40 </factor>
     <axis>
       <x1-m>  0.771 </x1-m>
       <y1-m> -3.421 </y1-m>
@@ -320,8 +320,8 @@
   <animation>
     <type>rotate</type>
     <object-name>voletD1</object-name>
-    <property>/surface-positions/flap-pos-norm</property>
-    <factor>-40.0</factor>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor> 40 </factor>
     <axis>
       <x1-m>  0.676 </x1-m>
       <y1-m>  0.944 </y1-m>
@@ -335,8 +335,8 @@
   <animation>
     <type>rotate</type>
     <object-name>voletD2</object-name>
-    <property>/surface-positions/flap-pos-norm</property>
-    <factor>-40.0</factor>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor> 40 </factor>
     <axis>
       <x1-m>  0.723 </x1-m>
       <y1-m>  2.217 </y1-m>
