@@ -902,6 +902,17 @@
     </offsets>
   </model>
 
+  <!-- Wing light cone -->
+  <model>
+    <path>Aircraft/DR400/Models/light/light-cone.xml</path>
+    <offsets>
+      <x-m>       -4.985 </x-m>
+      <y-m>        0.000 </y-m>
+      <z-m>       -0.259 </z-m>
+      <pitch-deg> -7.500 </pitch-deg>
+    </offsets>
+  </model>
+
   <model>
     <path>Aircraft/Fouga-Magister/Models/lights/StrobeWhite.xml</path>
     <offsets>
