@@ -68,7 +68,6 @@
         <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
 
         <control-speed control="FLAP0" transition-time="1"/>
-        <control-speed control="FLAP1" transition-time="0.2"/>
   </wing>
 
   <hstab x="-3.907" y="0" z="-0.142"
@@ -85,8 +84,6 @@
 
          <control-output control="FLAP0" prop="/surface-positions/left-elevator-pos-norm"/>
          <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
-
-         <control-speed control="FLAP0" transition-time="0.5"/>
   </hstab>
 
   <vstab x="-3.907" y="0" z="-0.142"
@@ -102,8 +99,6 @@
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0"/>
 
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
-
-         <control-speed control="FLAP0" transition-time="0.5"/>
   </vstab>
 
   <vstab x="-3.907" y="0" z="-0.142"
