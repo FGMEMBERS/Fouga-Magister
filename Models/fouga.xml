@@ -55,22 +55,6 @@
   </animation>
 
   <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>glass_shader.png</texture>
-    <object-name>vitres</object-name>
-    <object-name>verriere1</object-name>
-    <object-name>verriere2</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitres</object-name>
-    <object-name>verriere1</object-name>
-    <object-name>verriere2</object-name>
-  </animation>
-
-  <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
@@ -139,6 +123,50 @@
 -->
   </animation>
 
+  <effect>
+    <inherits-from>Aircraft/Fouga-Magister/Models/effects/Fougareflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>derives</object-name>
+    <object-name>poignee</object-name>
+    <object-name>sousqueue</object-name>
+    <object-name>tmp</object-name>
+    <object-name>reservoirs</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>tourverriere1</object-name>
+    <object-name>tourverriere2</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>voletG2</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>voletD2</object-name>
+    <object-name>lampe</object-name>
+    <object-name>porteA</object-name>
+    <object-name>porteG0</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD0</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+  </effect>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitres</object-name>
+    <object-name>verriere1</object-name>
+    <object-name>verriere2</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitres</object-name>
+    <object-name>verriere1</object-name>
+    <object-name>verriere2</object-name>
+  </animation>
+
   <!-- Interieur -->
   <model>
     <path>Aircraft/Fouga-Magister/Models/Interior/interior.xml</path>
@@ -170,6 +198,29 @@
   </animation>
 
   <!-- Particules OSG -->
+  <!-- Les flammes -->
+  <!-- Gauche -->
+  <model>
+    <path>Aircraft/Fouga-Magister/Models/effects/flammes/flammesG.xml</path>
+    <offsets>
+      <x-m>  2.670 </x-m>
+      <y-m> -0.392 </y-m>
+      <z-m> -0.455 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Fouga-Magister/Models/effects/flammes/flammesD.xml</path>
+    <offsets>
+      <x-m>  2.670 </x-m>
+      <y-m>  0.392 </y-m>
+      <z-m> -0.455 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Les TrainÃ©es des rÃ©acteurs -->
+  <!-- Gauche -->
   <model>
     <path>Aircraft/Fouga-Magister/Models/effects/trailL.xml</path>
     <offsets>
@@ -182,6 +233,7 @@
     </offsets>
   </model>
 
+  <!-- Droite -->
   <model>
     <path>Aircraft/Fouga-Magister/Models/effects/trailR.xml</path>
     <offsets>
@@ -191,6 +243,64 @@
       <roll-deg>    0 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Les trainÃ©es des saumons d'ailes -->
+  <!-- Gauche -->
+  <model>
+    <path>Aircraft/Fouga-Magister/Models/effects/tiptrail.xml</path>
+    <offsets>
+      <x-m>  1.428 </x-m>
+      <y-m> -5.883 </y-m>
+      <z-m> -0.397 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Fouga-Magister/Models/effects/tiptrail.xml</path>
+    <offsets>
+      <x-m>  1.428 </x-m>
+      <y-m>  5.883 </y-m>
+      <z-m> -0.397 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Effets sur le sol -->
+  <!-- Roue avant -->
+  <model>
+    <path>Aircraft/Fouga-Magister/Models/effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -4.584 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.218 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue gauche -->
+  <model>
+    <path>Aircraft/Fouga-Magister/Models/effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m>  0.181 </x-m>
+      <y-m> -1.955 </y-m>
+      <z-m> -1.396 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue droite -->
+  <model>
+    <path>Aircraft/Fouga-Magister/Models/effects/ground/ground2.xml</path>
+    <offsets>
+      <x-m>  0.181 </x-m>
+      <y-m>  1.955 </y-m>
+      <z-m> -1.396 </z-m>
     </offsets>
   </model>
 
@@ -517,7 +627,7 @@
     </axis>
   </animation>
 
-  <!-- Sortie/Rentrée des roues -->
+  <!-- Sortie/Rentrï¿½e des roues -->
   <animation>
     <name>TrainAvant</name>
     <object-name>axeA</object-name>
@@ -636,7 +746,7 @@
     </axis>
   </animation>
 
-  <!-- Rentrée de la roue avant
+  <!-- Rentrï¿½e de la roue avant
   <animation>
     <type>rotate</type>
     <object-name>AxeAvant</object-name>
@@ -902,17 +1012,6 @@
     </offsets>
   </model>
 
-  <!-- Wing light cone -->
-  <model>
-    <path>Aircraft/DR400/Models/light/light-cone.xml</path>
-    <offsets>
-      <x-m>       -4.985 </x-m>
-      <y-m>        0.000 </y-m>
-      <z-m>       -0.259 </z-m>
-      <pitch-deg> -7.500 </pitch-deg>
-    </offsets>
-  </model>
-
   <model>
     <path>Aircraft/Fouga-Magister/Models/lights/StrobeWhite.xml</path>
     <offsets>
@@ -930,6 +1029,29 @@
       <z-m> -0.397 </z-m>
     </offsets>
   </model>
+
+  <!-- light cone -->
+  <model>
+    <name>Taxi-Light</name>
+    <path>Aircraft/Fouga-Magister/Models/lights/light-cone.xml</path>
+    <offsets>
+      <x-m>       -4.985 </x-m>
+      <y-m>        0.000 </y-m>
+      <z-m>       -0.259 </z-m>
+      <pitch-deg> -7.500 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Taxi-Light</object-name>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value> 1 </value>
+      </equals>
+    </condition>
+  </animation>
 
 </PropertyList>
 
