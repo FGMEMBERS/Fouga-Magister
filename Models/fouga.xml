@@ -124,7 +124,7 @@
   </animation>
 
   <effect>
-    <inherits-from>Aircraft/Fouga-Magister/Models/effects/Fougareflect</inherits-from>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
     <object-name>aileronG</object-name>
