@@ -42,6 +42,9 @@
         <int type="int">0</int>
         <int type="int">0</int>
         <int type="int">0</int>
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/instrumentation/doors/wings/position-norm"/>
       </generic>
     </multiplay>
 
@@ -83,8 +86,10 @@
   </input>
  
   <nasal>
-    <fouga>
+    <doors>
       <file>Aircraft/Fouga-Magister/Nasal/doors.nas</file>
+    </doors>
+    <fouga>
       <file>Aircraft/Fouga-Magister/Nasal/liveries.nas</file>
       <file>Aircraft/Fouga-Magister/Nasal/light.nas</file>
 <!--
@@ -95,3 +100,4 @@
   </nasal>
 
 </PropertyList>
+

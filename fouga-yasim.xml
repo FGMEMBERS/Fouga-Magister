@@ -3,19 +3,20 @@
 <!--  Fouga Magister Potez CM170 yasim config. 2009 BARANGER Emmanuel
 
       sources      : http://www.aviation-fr.info/guide/fouga.php
+                     http://en.wikipedia.org/wiki/Fouga_Magister
 
       Wingspan     : 12.15 m (39 ft 10 in)
       Lenght       : 10.06 m (33 ft  0 in)
       Height       :  2.80 m ( 2 ft  2 in)
       Empty weight : 2150 kg (4740 lb)
-      Engines      : 2 x TurboMeca Marbore IIA turbojets 8755 lbf each
+      Engines      : 2 x TurboMeca Marbore IIA turbojets 880 lbf each
 
 -->
 
 <airplane mass="4740">
 
   <!-- Approach configuration -->
-  <approach speed="95" aoa="5" fuel="0.3">
+  <approach speed="94" aoa="4" fuel="0.3">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.4"/>
     <control-setting axis="/controls/engines/engine[1]/throttle" value="0.4"/>
     <control-setting axis="/controls/flight/flaps" value="1.0"/>
@@ -24,7 +25,7 @@
   </approach>
 
   <!-- Cruise configuration -->
-  <cruise speed="350" alt="20000" fuel="0.8">
+  <cruise speed="370" alt="30000" fuel="0.8">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
     <control-setting axis="/controls/engines/engine[1]/throttle" value="0.7"/>
     <control-setting axis="/controls/flight/flaps" value="0.0"/>
@@ -53,21 +54,24 @@
         taper="0.42"
         sweep="6"
         dihedral="-1"
-        camber="0.08">
+        camber="0.09">
         <stall aoa="16" width="3" peak="1.3"/>
         <flap0 start="0.02" end="0.52" lift="1.5" drag="1.3"/>
         <flap1 start="0.54" end="0.96" lift="1.3" drag="1.2"/>
+        <spoiler start="0.2" end="0.8"  lift="6" drag="4"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
         <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/spoilers" control="SPOILER"/>
 
         <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
-
         <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+        <control-output control="SPOILER" prop="/surface-positions/spoiler-pos-norm" invert="true" />
 
         <control-speed control="FLAP0" transition-time="1"/>
+        <control-speed control="SPOILER" transition-time="0.5"/>
   </wing>
 
   <hstab x="-3.907" y="0" z="-0.142"
@@ -118,28 +122,30 @@
          <control-speed control="FLAP0" transition-time="1"/>
   </vstab>
 
-  <!-- TurboMeca Marbore IIA turbojets 8755 lbf
+  <!-- Engines   source            : http://celag.free.fr/museum/moteur/marbo.htm#Historique
+                                     https://www.amazines.com/Turbomeca_Marbor%C3%A9_related.html
+                                     http://en.wikipedia.org/wiki/Turbomeca_Marbor%C3%A9
 
-       sources : http://celag.free.fr/museum/moteur/marbo.htm#Historique
-                 https://www.amazines.com/Turbomeca_Marbor%C3%A9_related.html
-
-       Masse  : 140 kg          (308 lbs)
-       Power  : 400 a 480 KgP   (881 lbf - 1058 lbf)  2058 pour le moment :(
+                 name              : TurboMeca Marbore IIA turbojets 8755 lbf
+                 type              : Turbojet
+                 Maximum thrust    :  880 lbf at 22600 rpm
+                 weight            :  358 lb   ( 162.4 kg)
   -->
+  <!-- thrust="880" -->
   <jet x="-0.764" y="0.576" z="-0.382"
        mass="308"
-       thrust="2058"
+       thrust="3000"
        tsfc="0.8"
-       egt="950">
+       egt="650">
        <actionpt x="-2.718" y="0.483" z="-0.382"/>
        <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
   </jet>
 
   <jet x="-0.764" y="-0.576" z="-0.382"
        mass="308"
-       thrust="2058"
+       thrust="3000"
        tsfc="0.8"
-       egt="950">
+       egt="650">
        <actionpt x="-2.718" y="-0.483" z="-0.382"/>
        <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
   </jet>
