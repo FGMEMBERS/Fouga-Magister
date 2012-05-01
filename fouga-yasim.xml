@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  Fouga Magister Potez CM170 yasim config. 2009 BARANGER Emmanuel
+                                   updated by F-GTUX April 2012
 
       sources      : http://www.aviation-fr.info/guide/fouga.php
                      http://en.wikipedia.org/wiki/Fouga_Magister
@@ -25,28 +26,29 @@
   </approach>
 
   <!-- Cruise configuration -->
-  <cruise speed="370" alt="30000" fuel="0.8">
-    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
-    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.7"/>
-    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+  <cruise speed="380" alt="30000" fuel="0.8">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.9"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.9"/>
+    <control-setting axis="/controls/flight/flaps" value="0"/>
+    <control-setting axis="/controls/flight/spoilers" value="0"/>
     <control-setting axis="/controls/gear/gear-down" value="0"/>
   </cruise>
 
   <cockpit x="2.734" y="0.0" z="0.482"/>
 
-  <fuselage ax="5.011" ay="0" az="-0.249" bx="-4.970" by="0" bz="-0.309" width="0.9" taper="0.2" midpoint="0.3"/>
+  <fuselage ax="5.011" ay="0" az="-0.249" bx="-4.970" by="0" bz="-0.309" width="0.9" taper="0.2" midpoint="0.3" cx="0.75"/>
 
   <!-- Left engine -->
-  <fuselage ax="1.194" ay="0.628" az="-0.342" bx="-2.735" by="0.483" bz="-0.455" width="0.5" taper="0.5" midpoint="0.05"/>
+  <fuselage ax="1.194" ay="0.628" az="-0.342" bx="-2.735" by="0.483" bz="-0.455" width="0.5" taper="0.5" midpoint="0.05" cx="0.75"/>
 
   <!-- Right engine -->
-  <fuselage ax="1.194" ay="-0.628" az="-0.342" bx="-2.735" by="-0.483" bz="-0.455" width="0.5" taper="0.5" midpoint="0.05"/>
+  <fuselage ax="1.194" ay="-0.628" az="-0.342" bx="-2.735" by="-0.483" bz="-0.455" width="0.5" taper="0.5" midpoint="0.05" cx="0.75"/>
 
   <!-- Left tank -->
-  <fuselage ax="0.614" ay="5.884" az="-0.396" bx="-1.435" by="5.884" bz="-0.396" width="0.3" taper="0.5" midpoint="0.3"/>
+  <fuselage ax="0.614" ay="5.884" az="-0.396" bx="-1.435" by="5.884" bz="-0.396" width="0.3" taper="0.5" midpoint="0.3" cx="0.25"/>
 
   <!-- Right tank -->
-  <fuselage ax="0.614" ay="-5.884" az="-0.396" bx="-1.435" by="-5.884" bz="-0.396" width="0.3" taper="0.5" midpoint="0.3"/>
+  <fuselage ax="0.614" ay="-5.884" az="-0.396" bx="-1.435" by="-5.884" bz="-0.396" width="0.3" taper="0.5" midpoint="0.3" cx="0.25"/>
 
   <wing x="-0.066" y="0.824" z="-0.352"
         chord="1.897"
@@ -54,11 +56,11 @@
         taper="0.42"
         sweep="6"
         dihedral="-1"
-        camber="0.09">
+        camber="0.03">
         <stall aoa="16" width="3" peak="1.3"/>
         <flap0 start="0.02" end="0.52" lift="1.5" drag="1.3"/>
-        <flap1 start="0.54" end="0.96" lift="1.3" drag="1.2"/>
-        <spoiler start="0.2" end="0.8"  lift="6" drag="4"/>
+        <flap1 start="0.54" end="0.96" lift="1.5" drag="1.2"/>
+        <spoiler start="0.2" end="0.8"  lift="1.1" drag="2.5"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
@@ -68,10 +70,11 @@
         <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
         <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
-        <control-output control="SPOILER" prop="/surface-positions/spoiler-pos-norm" invert="true" />
+        <control-output control="SPOILER" prop="/surface-positions/spoiler-pos-norm" invert="true"/>
 
-        <control-speed control="FLAP0" transition-time="1"/>
-        <control-speed control="SPOILER" transition-time="0.5"/>
+        <control-speed control="FLAP0" transition-time="3"/>
+        <control-speed control="FLAP1" transition-time="0.5"/>
+        <control-speed control="SPOILER" transition-time="2"/>
   </wing>
 
   <hstab x="-3.907" y="0" z="-0.142"
@@ -81,13 +84,14 @@
          sweep="9"
          dihedral="34">
          <stall aoa="16" width="6" peak="1.4"/>
-         <flap0 start="0" end="1" lift="1.5" drag="1.7"/>
+         <flap0 start="0" end="1" lift="1.5" drag="1.5"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
          <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
 
          <control-output control="FLAP0" prop="/surface-positions/left-elevator-pos-norm"/>
          <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+         <control-speed control="FLAP0" transition-time="0.5"/>
   </hstab>
 
   <vstab x="-3.907" y="0" z="-0.142"
@@ -97,12 +101,13 @@
          sweep="9"
          dihedral="34">
          <stall aoa="16" width="6" peak="1.4"/>
-         <flap0 start="0" end="1" lift="1.5" drag="1.7"/>
+         <flap0 start="0" end="1" lift="1.5" drag="1.5"/>
 
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0"/>
 
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+         <control-speed control="FLAP0" transition-time="0.5"/>
   </vstab>
 
   <vstab x="-3.907" y="0" z="-0.142"
@@ -112,14 +117,13 @@
          sweep="9"
          dihedral="146">
          <stall aoa="16" width="6" peak="1.4"/>
-         <flap0 start="0" end="1" lift="1.5" drag="1.7"/>
+         <flap0 start="0" end="1" lift="1.5" drag="1.5"/>
 
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0"/>
 
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
-
-         <control-speed control="FLAP0" transition-time="1"/>
+         <control-speed control="FLAP0" transition-time="0.5"/>
   </vstab>
 
   <!-- Engines   source            : http://celag.free.fr/museum/moteur/marbo.htm#Historique
@@ -134,18 +138,20 @@
   <!-- thrust="880" -->
   <jet x="-0.764" y="0.576" z="-0.382"
        mass="308"
-       thrust="3000"
+       thrust="880"
        tsfc="0.8"
-       egt="650">
+       egt="950"
+       spool-time="2">
        <actionpt x="-2.718" y="0.483" z="-0.382"/>
        <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
   </jet>
 
   <jet x="-0.764" y="-0.576" z="-0.382"
        mass="308"
-       thrust="3000"
+       thrust="880"
        tsfc="0.8"
-       egt="650">
+       egt="950"
+       spool-time="2">
        <actionpt x="-2.718" y="-0.483" z="-0.382"/>
        <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
   </jet>
@@ -200,14 +206,22 @@
   </gear>
 
   <!-- Fuselage -->
-  <tank x="2.2" y="0.0" z="-0.3" jet="true" capacity="1000"/>
+  <tank x=" 2.200" y=" 0.000" z="-0.300" jet="true" capacity="570"/>
   <!-- fuel capacity in pounds; 1520 kg=3351 lb -->
   <!-- Left -->
-  <tank x="-0.100" y="5.884" z="-0.396" jet="true" capacity="2351"/>
+  <tank x="-0.100" y=" 5.884" z="-0.396" jet="true" capacity="180"/>
   <!-- Right -->
-  <tank x="-0.100" y="-5.884" z="-0.396" jet="true" capacity="2351"/>
+  <tank x="-0.100" y="-5.884" z="-0.396" jet="true" capacity="180"/>
 
   <!-- Modifier le CG -->
-  <ballast x="2" y="0" z="-1" mass="1000"/>
+  <ballast x="-7.0" y=" 0" z="-0.325" mass="790"/>
+  <ballast x=" 7.0" y=" 0" z="-0.325" mass="790"/>
+
+  <ballast x=" 0.0" y=" 3" z="-0.325" mass="790"/>
+  <ballast x=" 0.0" y="-3" z="-0.325" mass="790"/>
+
+  <ballast x=" 0.0" y=" 0" z=" 1.175" mass="790"/>
+  <ballast x=" 0.0" y=" 0" z="-1.825" mass="790"/>
 
 </airplane>
+
