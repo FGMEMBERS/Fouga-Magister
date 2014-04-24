@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -25,9 +25,9 @@
   <model>
     <path>Aircraft/Fouga-Magister/Models/Interior/Panel/Instruments/Empty/big.xml</path>
     <offsets>
-      <x-m>  1.618 </x-m>
-      <y-m> -0.250 </y-m>
-      <z-m>  0.170 </z-m>
+      <x-m>  0.178 </x-m>
+      <y-m> -0.110 </y-m>
+      <z-m>  0.167 </z-m>
     </offsets>
   </model>
 
@@ -340,4 +340,3 @@
   </model>
 
 </PropertyList>
-

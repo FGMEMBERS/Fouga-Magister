@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -13,9 +13,9 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -55,7 +55,8 @@
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
     <object-name>tmp</object-name>
-
+    <object-name>antenne</object-name>
+    
     <object-name>spolierGH1</object-name>
     <object-name>spolierGH2</object-name>
     <object-name>spolierGH3</object-name>
@@ -111,7 +112,8 @@
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
     <object-name>tmp</object-name>
-
+    <object-name>antenne</object-name>
+    
     <object-name>spolierGB1</object-name>
     <object-name>spolierGB2</object-name>
     <object-name>spolierGB3</object-name>
@@ -142,35 +144,11 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
@@ -201,24 +179,24 @@
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
     <object-name>tmp</object-name>
+    <object-name>antenne</object-name>
   </effect>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Fouga-Magister/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitres</object-name>
     <object-name>verriere1</object-name>
     <object-name>verriere2</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
+  </effect>
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>vitres</object-name>
     <object-name>verriere1</object-name>
     <object-name>verriere2</object-name>
-  </animation>
-
+  </effect>
+  
   <!-- Interieur -->
   <model>
     <path>Aircraft/Fouga-Magister/Models/Interior/interior.xml</path>
@@ -238,7 +216,7 @@
   <!-- Les flammes -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Fouga-Magister/Models/effects/flammes/flammesG.xml</path>
+    <path>Aircraft/Fouga-Magister/Models/Effects/flammes/combustionG.xml</path>
     <offsets>
       <x-m>  2.670 </x-m>
       <y-m> -0.392 </y-m>
@@ -247,7 +225,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Fouga-Magister/Models/effects/smoke/smokeL.xml</path>
+    <path>Aircraft/Fouga-Magister/Models/Effects/smoke/smokeL.xml</path>
     <offsets>
       <x-m>  2.670 </x-m>
       <y-m> -0.392 </y-m>
@@ -257,7 +235,7 @@
 
   <!-- Droite -->
   <model>
-    <path>Aircraft/Fouga-Magister/Models/effects/flammes/flammesD.xml</path>
+    <path>Aircraft/Fouga-Magister/Models/Effects/flammes/combustionD.xml</path>
     <offsets>
       <x-m>  2.670 </x-m>
       <y-m>  0.392 </y-m>
@@ -266,7 +244,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Fouga-Magister/Models/effects/smoke/smokeR.xml</path>
+    <path>Aircraft/Fouga-Magister/Models/Effects/smoke/smokeR.xml</path>
     <offsets>
       <x-m>  2.670 </x-m>
       <y-m>  0.392 </y-m>
@@ -277,7 +255,7 @@
   <!-- Les Trainées des réacteurs -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Fouga-Magister/Models/effects/trail/trailL.xml</path>
+    <path>Aircraft/Fouga-Magister/Models/Effects/trail/trailL.xml</path>
     <offsets>
       <x-m>  2.793 </x-m>
       <y-m> -0.380 </y-m>
@@ -287,7 +265,7 @@
 
   <!-- Droite -->
   <model>
-    <path>Aircraft/Fouga-Magister/Models/effects/trail/trailR.xml</path>
+    <path>Aircraft/Fouga-Magister/Models/Effects/trail/trailR.xml</path>
     <offsets>
       <x-m>  2.793 </x-m>
       <y-m>  0.380 </y-m>
@@ -298,7 +276,7 @@
   <!-- Les trainées des saumons d'ailes -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Fouga-Magister/Models/effects/tiptrail/tiptrail.xml</path>
+    <path>Aircraft/Fouga-Magister/Models/Effects/tiptrail/tiptrail.xml</path>
     <offsets>
       <x-m>  1.428 </x-m>
       <y-m> -5.883 </y-m>
@@ -308,7 +286,7 @@
 
   <!-- Droite -->
   <model>
-    <path>Aircraft/Fouga-Magister/Models/effects/tiptrail/tiptrail.xml</path>
+    <path>Aircraft/Fouga-Magister/Models/Effects/tiptrail/tiptrail.xml</path>
     <offsets>
       <x-m>  1.428 </x-m>
       <y-m>  5.883 </y-m>
@@ -319,7 +297,7 @@
   <!-- Effets sur le sol -->
   <!-- Roue avant -->
   <model>
-    <path>Aircraft/Fouga-Magister/Models/effects/ground/ground0.xml</path>
+    <path>Aircraft/Fouga-Magister/Models/Effects/ground/ground0.xml</path>
     <offsets>
       <x-m> -4.584 </x-m>
       <y-m>  0.000 </y-m>
@@ -329,7 +307,7 @@
 
   <!-- Roue gauche -->
   <model>
-    <path>Aircraft/Fouga-Magister/Models/effects/ground/ground1.xml</path>
+    <path>Aircraft/Fouga-Magister/Models/Effects/ground/ground1.xml</path>
     <offsets>
       <x-m>  0.181 </x-m>
       <y-m> -1.955 </y-m>
@@ -339,7 +317,7 @@
 
   <!-- Roue droite -->
   <model>
-    <path>Aircraft/Fouga-Magister/Models/effects/ground/ground2.xml</path>
+    <path>Aircraft/Fouga-Magister/Models/Effects/ground/ground2.xml</path>
     <offsets>
       <x-m>  0.181 </x-m>
       <y-m>  1.955 </y-m>
@@ -352,14 +330,14 @@
     <type>rotate</type>
     <object-name>profdirG</object-name>
     <property>surface-positions/rudder-pos-norm</property>
-    <factor> -15 </factor>
+    <factor> 15 </factor>
     <axis>
-      <x1-m>  4.173 </x1-m>
-      <y1-m> -0.372 </y1-m>
-      <z1-m>  0.102 </z1-m>
-      <x2-m>  4.483 </x2-m>
-      <y2-m> -2.121 </y2-m>
-      <z2-m>  1.296 </z2-m>
+      <x1-m>  4.49809 </x1-m>
+      <y1-m> -2.12054 </y1-m>
+      <z1-m>  1.29579 </z1-m>
+      <x2-m>  4.22290 </x2-m>
+      <y2-m> -0.37193 </y2-m>
+      <z2-m>  0.10210 </z2-m>
     </axis>
   </animation>
 
@@ -367,14 +345,14 @@
     <type>rotate</type>
     <object-name>profdirD</object-name>
     <property>surface-positions/rudder-pos-norm</property>
-    <factor> -15 </factor>
+    <factor> 15 </factor>
     <axis>
-      <x1-m> 4.173 </x1-m>
-      <y1-m> 0.372 </y1-m>
-      <z1-m> 0.102 </z1-m>
-      <x2-m> 4.483 </x2-m>
-      <y2-m> 2.121 </y2-m>
-      <z2-m> 1.296 </z2-m>
+      <x1-m> 4.49809 </x1-m>
+      <y1-m> 2.12054 </y1-m>
+      <z1-m> 1.29579 </z1-m>
+      <x2-m> 4.22290 </x2-m>
+      <y2-m> 0.37193 </y2-m>
+      <z2-m> 0.10210 </z2-m>
     </axis>
   </animation>
 
@@ -384,12 +362,12 @@
     <property>surface-positions/elevator-pos-norm</property>
     <factor> 15 </factor>
     <axis>
-      <x1-m>  4.483 </x1-m>
-      <y1-m> -2.121 </y1-m>
-      <z1-m>  1.296 </z1-m>
-      <x2-m>  4.173 </x2-m>
-      <y2-m> -0.372 </y2-m>
-      <z2-m>  0.102 </z2-m>
+      <x1-m>  4.49809 </x1-m>
+      <y1-m> -2.12054 </y1-m>
+      <z1-m>  1.29579 </z1-m>
+      <x2-m>  4.22290 </x2-m>
+      <y2-m> -0.37193 </y2-m>
+      <z2-m>  0.10210 </z2-m>
     </axis>
   </animation>
 
@@ -399,12 +377,12 @@
     <property>surface-positions/elevator-pos-norm</property>
     <factor> 15 </factor>
     <axis>
-      <x1-m> 4.173 </x1-m>
-      <y1-m> 0.372 </y1-m>
-      <z1-m> 0.102 </z1-m>
-      <x2-m> 4.483 </x2-m>
-      <y2-m> 2.121 </y2-m>
-      <z2-m> 1.296 </z2-m>
+      <x1-m> 4.22290 </x1-m>
+      <y1-m> 0.37193 </y1-m>
+      <z1-m> 0.10210 </z1-m>
+      <x2-m> 4.49809 </x2-m>
+      <y2-m> 2.12054 </y2-m>
+      <z2-m> 1.29579 </z2-m>
     </axis>
   </animation>
 
@@ -570,8 +548,8 @@
     <object-name>porteG1</object-name>
     <property>/gear/gear[1]/position-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> 0.00 </dep></entry>
-      <entry><ind> 1 </ind><dep> 0.05 </dep></entry>
+      <entry><ind> 0 </ind><dep> 0.000 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.028 </dep></entry>
     </interpolation>
     <axis>
       <x> 0 </x>
@@ -645,8 +623,8 @@
     <object-name>porteD1</object-name>
     <property>/gear/gear[2]/position-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> 0.00 </dep></entry>
-      <entry><ind> 1 </ind><dep> 0.05 </dep></entry>
+      <entry><ind> 0 </ind><dep> 0.000 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.028 </dep></entry>
     </interpolation>
     <axis>
       <x> 0 </x>
@@ -1062,9 +1040,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>CanopyAvant</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>rotate</type>
     <object-name>CanopyAvant</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>  0 </dep></entry>
       <entry><ind> 1 </ind><dep> 80 </dep></entry>
@@ -1088,9 +1080,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>CanopyArriere</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>rotate</type>
     <object-name>CanopyArriere</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>  0 </dep></entry>
       <entry><ind> 1 </ind><dep> 80 </dep></entry>
@@ -1136,6 +1142,15 @@
   </model>
 
   <model>
+    <path>Aircraft/Fouga-Magister/Models/lights/StrobeLight.xml</path>
+    <offsets>
+      <x-m>  0.100 </x-m>
+      <y-m> -6.046 </y-m>
+      <z-m> -0.397 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
     <path>Aircraft/Fouga-Magister/Models/lights/GreenLight.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
@@ -1145,29 +1160,20 @@
   </model>
 
   <model>
+    <path>Aircraft/Fouga-Magister/Models/lights/StrobeLight.xml</path>
+    <offsets>
+      <x-m>  0.100 </x-m>
+      <y-m>  6.046 </y-m>
+      <z-m> -0.397 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
     <path>Aircraft/Fouga-Magister/Models/lights/WhiteLight.xml</path>
     <offsets>
       <x-m> -4.985 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.259 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Fouga-Magister/Models/lights/StrobeWhite.xml</path>
-    <offsets>
-      <x-m>  0.100 </x-m>
-      <y-m> -6.046 </y-m>
-      <z-m> -0.397 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Fouga-Magister/Models/lights/StrobeWhite.xml</path>
-    <offsets>
-      <x-m>  0.100 </x-m>
-      <y-m>  6.046 </y-m>
-      <z-m> -0.397 </z-m>
     </offsets>
   </model>
 
@@ -1195,4 +1201,3 @@
   </animation>
 
 </PropertyList>
-
